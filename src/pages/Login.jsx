@@ -29,7 +29,7 @@ const Login = () => {
           // Salve o token no localStorage
           localStorage.setItem("token", token);
 
-          navigate("/");
+          navigate("/playerFront");
         } else {
           // O token não é válido ou não contém as informações esperadas
           alert("Invalid token or missing user information");
@@ -77,7 +77,7 @@ const Login = () => {
             Entrar
           </button>
           <p>
-            Ainda não tem conta? <Link to="/register">Clique Aqui</Link>
+            Ainda não tem conta? <Link to="/playerFront/register">Clique Aqui</Link>
           </p>
         </form>
       </div>

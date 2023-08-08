@@ -18,7 +18,7 @@ const Register = () => {
       );
 
       if (response.status === 201) {
-        navigate("/login");
+        navigate("/playerFront/login");
       } else {
         alert("Something went wrong!");
       }
@@ -62,7 +62,7 @@ const Register = () => {
             Registrar
           </button>
           <p>
-            Já possui conta? <Link to="/login">Clique Aqui</Link>
+            Já possui conta? <Link to="/playerFront/login">Clique Aqui</Link>
           </p>
         </form>
       </div>

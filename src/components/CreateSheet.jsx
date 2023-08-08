@@ -60,7 +60,7 @@ const CreateSheet = () => {
           historia: "",
         });      
         setTimeout(() => {
-          navigate("/");
+          navigate("/playerFront");
         }, 2000);
       } else {
         console.log("Algo deu errado!");

@@ -46,7 +46,7 @@ const UpdateSheet = () => {
 
   return (
     <div>
-      <Link to="/">
+      <Link to="/playerFront">
         <button>Meu Personagem</button>
       </Link>
       <h2>Atualizar Dados do Usuário</h2>

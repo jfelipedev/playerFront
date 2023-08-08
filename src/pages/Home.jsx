@@ -21,10 +21,10 @@ const Home = () => {
     <div>
       {auth ? (
         <div>
-          <Link to="/create-character">
+          <Link to="/playerFront/create-character">
             <button>Criar Personagem</button>
           </Link>
-          <Link to="/update-character">
+          <Link to="/playerFront/update-character">
             <button>Atualizar Personagem</button>
           </Link>
           <h3>Bem-vindo!</h3>
@@ -34,7 +34,7 @@ const Home = () => {
       ) : (
         <div>
           <h3>Faça login para acessar esta página.</h3>
-          <Link to="/login">
+          <Link to="/playerFront/login">
             <button>login</button>
           </Link>
         </div>

@@ -10,10 +10,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/playerFront" element={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/create-character" element={<CreateSheet />}></Route>
-        <Route path="/update-character" element={<UpdateSheet />}></Route>
+        <Route path="/playerFront/login" element={<Login />}></Route>
+        <Route path="/playerFront/register" element={<Register />}></Route>
+        <Route path="/playerFront/create-character" element={<CreateSheet />}></Route>
+        <Route path="/playerFront/update-character" element={<UpdateSheet />}></Route>
       </Routes>
     </BrowserRouter>
   );
