@@ -1,44 +1,55 @@
-import { useEffect, useState } from "react";
+import "./equipSet.css";
+import { useState, useEffect } from "react";
 
-const Sheet = () => {
-  const [characterData, setCharacterData] = useState({});
-
+const EquipSet = () => {
+  const [weapons, setWeapons] = useState([]);
+  const [selectedWeapon, setSelectedWeapon] = useState(null);
+  
   useEffect(() => {
-    const fetchCharacterData = async () => {
+    const fetchWeapons = async () => {
       try {
-        const response = await fetch(
-          "https://sheets-api-psi.vercel.app/userData/"
-        );
+        const response = await fetch("https://items-api-sigma.vercel.app/armas/simples");
         const data = await response.json();
-        setCharacterData(data);
+        setWeapons(data);
       } catch (error) {
-        console.error("Erro ao buscar os dados:", error);
+        console.error("Erro ao buscar as armas:", error);
       }
     };
 
-    fetchCharacterData();
+    fetchWeapons();
   }, []);
 
-  return (
-    <div>
-      <h1>{characterData.nome}</h1>
-      <p>Login: {characterData.login}</p>
-      <p>Classe: {characterData.classe}</p>
-      {/* Outras informações do personagem */}
-      <h2>Atributos:</h2>
-      <ul>
-        <li>Defesa: {characterData.defesa}</li>
-        <li>Destreza: {characterData.destreza}</li>
-        <li>Inteligência: {characterData.inteligencia}</li>
-        {/* Mais atributos aqui */}
-      </ul>
-      <h2>Vantagens:</h2>
-      <p>{characterData.vantagens}</p>
-      <h2>Desvantagens:</h2>
-      <p>{characterData.desvantagens}</p>
-      {/* Outras seções */}
-    </div>
-  );
-};
+  useEffect(() => {
+    const savedSelectedWeapon = localStorage.getItem("selectedWeapon");
+    if (savedSelectedWeapon) {
+      setSelectedWeapon(JSON.parse(savedSelectedWeapon));
+    }
+  }, []);
+  
+  const handleSelectChangeArmor = (event) => {
+    const selectedArmorName = event.target.value;
+    if (selectedArmorName === "empty") {
+      setSelectedArmor(null);
+      localStorage.removeItem("selectedArmor");
+    } else {
+      const selectedArmor = armors.find(
+        (armor) => armor.nome === selectedArmorName
+      );
+      setSelectedArmor(selectedArmor);
+      localStorage.setItem("selectedArmor", JSON.stringify(selectedArmor));
+    }
+  };
 
-export default Sheet;
+
+
+
+
+
+<select className="item-select" onChange={handleSelectChangeArmor}>
+<option value="">Selecione uma Armadura</option>
+{armors.map((armor) => (
+  <option key={armor._id} value={armor.nome}>
+    {armor.nome}
+  </option>
+))}
+</select>
