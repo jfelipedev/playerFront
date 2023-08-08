@@ -24,6 +24,9 @@ const Home = () => {
           <Link to="/create-character">
             <button>Criar Personagem</button>
           </Link>
+          <Link to="/update-character">
+            <button>Atualizar Personagem</button>
+          </Link>
           <h3>Bem-vindo!</h3>
           <button onClick={handleLogout}>Logout</button>
           <SelectPlayerSheet />
