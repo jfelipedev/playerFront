@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import EquipSet from "./EquipSet";
+import TextsAreas from "./TextsAreas";
 
 const SelectPlayerSheet = () => {
   const [selectedId, setSelectedId] = useState("");
@@ -80,19 +81,14 @@ const SelectPlayerSheet = () => {
             </ul>
             <h2>Economias:</h2>
             <ul>{/* Resto das economias */}</ul>
-            <h2>Vantagens:</h2>
-            <textarea>{userData.vantagens}</textarea>
-            <h2>Desvantagens:</h2>
-            <textarea>{userData.desvantagens}</textarea>
-            <h2>Backpack:</h2>
-            <textarea>{userData.backpack}</textarea>
-            <h2>História:</h2>
-            <textarea>{userData.historia}</textarea>
-            <h2>Anotações:</h2>
-            <textarea>{userData.anotacoes}</textarea>
-            {/* Outras seções */}
+            <div>
+        <TextsAreas selectedId={selectedId} />
+        </div>
           </div>
+          
         ) : null}
+
+
       </div>
 
       {isLoading && <p>Carregando...</p>}
