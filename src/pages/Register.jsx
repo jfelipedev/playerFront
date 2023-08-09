@@ -63,7 +63,7 @@ const Register = () => {
             Registrar
           </button>
           <p>
-            Já possui conta? <Link to="/playerFront/login">Clique Aqui</Link>
+            Você já possui conta? <Link to="/playerFront/login">Clique Aqui</Link>
           </p>
         </form>
       </div>
