@@ -124,6 +124,13 @@ const SelectPlayerSheet = () => {
                   <span className="to-upper-case">{userData.classe}</span>
                 </strong>
               </p>
+              <p style={{ textAlign: "center" }}>
+                {" "}
+                <strong>
+                  Level:{" "}
+                  <span className="to-upper-case">{userData.level}</span>
+                </strong>
+              </p>
               <h2 className="section-separator"></h2>
               <div className="life-mana-container">
                 <button className="increase-decrease-button" onClick={handleIncreaseLife}>
