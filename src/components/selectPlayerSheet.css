@@ -42,20 +42,20 @@
   align-items: center;
   height: 100px;
   padding-bottom: 20px;
- }
- .set-container h2 {
-margin: 10px;
- }
+}
+.set-container h2 {
+  margin: 10px;
+}
 
-
-
-.set-space{
+.set-space {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
+.life-mana-container {
+  text-align: center;
+}
 .attributes-main-container {
   display: flex;
   gap: 30px;
@@ -68,50 +68,50 @@ margin: 10px;
   padding: 0;
 }
 
-.your-character{
-    display: flex;
-    background: #394867;
-    border-radius: 5px;
-    justify-content: center;
-    padding: 0px 10px;
+.your-character {
+  display: flex;
+  background: #394867;
+  border-radius: 5px;
+  justify-content: center;
+  padding: 0px 10px;
 }
-.money-container{
-    padding: 0;
-    margin: 0;
-}
-
-.character-money{
-    list-style: none;
-    display: flex;
-    justify-content: left;
-    padding: 0;
-    margin: 0;
+.money-container {
+  padding: 0;
+  margin: 0;
 }
 
-.increase-decrease-button{
-    background: none;
-    border: 1px solid white;
-    color:white;
-    width: 25px;
-    height: 25px;
-    padding: 0;
-    margin: 0 10px;
-    text-align: center;
-    border-radius: 3px;
-    font-size: small;
+.character-money {
+  list-style: none;
+  display: flex;
+  justify-content: left;
+  padding: 0;
+  margin: 0;
 }
 
-.to-upper-case{
+.increase-decrease-button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  margin: 0 10px;
+  text-align: center;
+  border-radius: 3px;
+  font-size: small;
+}
+
+.to-upper-case {
   text-transform: uppercase;
+  
 }
 
-.section-separator{
+.section-separator {
   border-bottom: 1px solid white;
   width: 100%;
 }
 
 @media (max-width: 660px) {
-
   .attributes-main-container {
     display: flex;
     flex-direction: column;
@@ -121,24 +121,24 @@ margin: 10px;
     padding: 10px;
   }
 
-  .set-container{
+  .set-container {
     align-items: center;
   }
 
-  .teste{
+  .teste {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .attributes{
+  .attributes {
     align-items: center;
   }
 
-  .character-money{
+  .character-money {
     justify-content: center;
-}
-.life-mana-container{
-  display: flex;
-}
+  }
+  .life-mana-container {
+    display: flex;
+  }
 }

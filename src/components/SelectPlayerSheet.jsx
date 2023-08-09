@@ -97,7 +97,8 @@ const SelectPlayerSheet = () => {
               <img src={userData.imgURL} />
               </div>
               <h2 className="section-separator"></h2>
-              <p> <strong> Aventureiro Classe: <span className="to-upper-case">{userData.classe}</span></strong></p>
+              <p style={{ textAlign: "center" }}> <strong> Aventureiro Classe: <span className="to-upper-case">{userData.classe}</span></strong></p>
+              <h2 className="section-separator"></h2>
               <div className="life-mana-container">
                 <button className="increase-decrease-button" onClick={handleIncreaseLife}>+</button>
                 <strong>Life: {life}</strong>
