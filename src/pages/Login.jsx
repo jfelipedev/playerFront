@@ -1,3 +1,4 @@
+import './form.css'
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode"
@@ -44,9 +45,9 @@ const Login = () => {
 
   return (
     <div className="d-flex justify-content-center align items-center bg-primary vh-100">
-      <div className="bg-white p-3 rounded w-25">
+      <div className="background-form">
         <h2>Sign In</h2>
-        <form onSubmit={handleSubmit}>
+        <form className="form-login" onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="login">
               <strong>Login</strong> <br />
@@ -55,7 +56,7 @@ const Login = () => {
               type="text"
               name="login"
               placeholder="Enter Login"
-              className="form-control rounded-0"
+              className="form-input"
               onChange={(e) => setValues({ ...values, login: e.target.value })}
             />
           </div>
@@ -67,13 +68,13 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Enter Password"
-              className="form-control rounded-0"
+              className="form-input"
               onChange={(e) =>
                 setValues({ ...values, password: e.target.value })
               }
             />
-          </div>
-          <button type="submit" className="btn btn-success w-100 rounded-0">
+          </div>          
+          <button type="submit" className="entrar-button">
             Entrar
           </button>
           <p>

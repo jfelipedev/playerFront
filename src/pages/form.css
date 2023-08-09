@@ -1,0 +1,45 @@
+.background-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  padding: 70px;
+  color: #212a3e;
+  border-radius: 10px;
+  box-shadow: 1px 10px 20px 1px #000000;
+}
+.form-input {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  margin-bottom: 10px;
+}
+.form-input:focus {
+  transition: 0.2s;
+  font-size: 1rem;
+  color: gray;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+}
+.entrar-button {
+  background: #212a3e;
+  color: white;
+}
+
+.entrar-button:hover {
+  background: #394867;
+  border-color: #9BA4B5;
+}
+
+

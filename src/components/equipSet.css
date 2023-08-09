@@ -1,7 +1,11 @@
 .item-select {
     width: 20px;
     border: none;
-    background: transparent;
+    background: white;
+    margin: 0 5px;
+  }
+  .item-select:hover{
+    background: rgb(224, 224, 224);
   }
   .item-container {
     display: flex;
@@ -12,11 +16,13 @@
     width: 45px;
     height: 45px;
     padding: 5px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5px;
   }
   .img-container {
-    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
   }
   
   .tooltip {

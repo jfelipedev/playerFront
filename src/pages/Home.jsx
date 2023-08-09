@@ -1,3 +1,4 @@
+import "./Home.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SelectPlayerSheet from "../components/SelectPlayerSheet";
@@ -18,21 +19,29 @@ const Home = () => {
     setAuth(false);
   };
   return (
-    <div>
+    <div className="main-container-home">
       {auth ? (
-        <div>
-          <Link to="/playerFront/create-character">
-            <button>Criar Personagem</button>
-          </Link>
-          <Link to="/playerFront/update-character">
-            <button>Atualizar Personagem</button>
-          </Link>
-          <h3>Bem-vindo!</h3>
-          <button onClick={handleLogout}>Logout</button>
+        <div className="diplayed-sheet">
+          <div className="nav-buttons">
+            <div>
+              <Link to="/playerFront/create-character">
+                <button className="home-button">Criar Personagem</button>
+              </Link>
+              <Link to="/playerFront/update-character">
+                <button className="home-button">Atualizar Personagem</button>
+              </Link>
+            </div>
+            <div>
+              <button className="home-button" onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+          </div>
+
           <SelectPlayerSheet />
         </div>
       ) : (
-        <div>
+        <div className="msg-button-login">
           <h3>Faça login para acessar esta página.</h3>
           <Link to="/playerFront/login">
             <button>login</button>

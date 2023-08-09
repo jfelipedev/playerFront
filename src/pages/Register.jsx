@@ -1,3 +1,4 @@
+import './form.css'
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -29,9 +30,9 @@ const Register = () => {
 
   return (
     <div className="d-flex justify-content-center align items-center bg-primary vh-100">
-      <div className="bg-white p-3 rounded w-25">
-        <h2>Sign-Up</h2>
-        <form onSubmit={handleSubmit}>
+      <div className="background-form">
+        <h2>Sign Up</h2>
+        <form className="form-login" onSubmit={handleSubmit}>
           <div className="mb-3">
             <label htmlFor="login">
               <strong>Login</strong> <br />
@@ -40,7 +41,7 @@ const Register = () => {
               type="text"
               name="login"
               placeholder="Enter Login"
-              className="form-control rounded-0"
+              className="form-input"
               onChange={(e) => setValues({ ...values, login: e.target.value })}
             />
           </div>
@@ -52,13 +53,13 @@ const Register = () => {
               type="password"
               name="password"
               placeholder="Enter Password"
-              className="form-control rounded-0"
+              className="form-input"
               onChange={(e) =>
                 setValues({ ...values, password: e.target.value })
               }
             />
           </div>
-          <button type="submit" className="btn btn-success w-100 rounded-0">
+          <button type="submit" className="entrar-button">
             Registrar
           </button>
           <p>

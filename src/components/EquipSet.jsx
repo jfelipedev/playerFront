@@ -78,7 +78,7 @@ const EquipSet = () => {
       const selectedShield = shields.find(
         (shield) => shield.nome === selectedShieldName
       );
-      setSelectedWeapon(selectedShield);
+      setSelectedShield(selectedShield); // Correção aqui
       localStorage.setItem("selectedShield", JSON.stringify(selectedShield));
     }
   };

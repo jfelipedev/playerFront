@@ -140,7 +140,36 @@ const UpdateSheet = () => {
               value={updatedData.sabedoria || ""}
               onChange={handleInputChange}
             />
-          </label>
+          </label><br />
+          <label>
+            GP:
+            <input
+              type="number"
+              name="gp"
+              value={updatedData.gp || ""}
+              onChange={handleInputChange}
+            />
+          </label><br />
+
+          <label>
+            Platinum:
+            <input
+              type="number"
+              name="platinum"
+              value={updatedData.platinum || ""}
+              onChange={handleInputChange}
+            />
+          </label><br />
+          <label>
+            Crystal:
+            <input
+              type="number"
+              name="crystal"
+              value={updatedData.crystal || ""}
+              onChange={handleInputChange}
+            />
+          </label> 
+
           <br />
           <br /> <br />
           <button type="submit">Atualizar Personagem</button>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const CreateSheet = () => {
   const navigate = useNavigate();
@@ -58,6 +58,9 @@ const CreateSheet = () => {
           vantagens: "",
           desvantagens: "",
           historia: "",
+          gp: "",
+          platinum: "",
+          crystal: "",
         });      
         setTimeout(() => {
           navigate("/playerFront");
@@ -291,9 +294,57 @@ const CreateSheet = () => {
               />
             </div>
 
-            <button type="submit" className="btn btn-success w-100 rounded-0">
+            <div className="mb-3">
+              <label htmlFor="gp">
+                <strong>Gold Coins</strong> <br />
+              </label>
+              <textarea
+                name="gp"
+                placeholder="Gold Coins"
+                className="form-control rounded-0"
+                value={values.gp}
+                onChange={(e) =>
+                  setValues({ ...values, gp: e.target.value })
+                }
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="platinum">
+                <strong>Platinum Coins</strong> <br />
+              </label>
+              <textarea
+                name="platinum"
+                placeholder="Platinum Coins"
+                className="form-control rounded-0"
+                value={values.platinum}
+                onChange={(e) =>
+                  setValues({ ...values, platinum: e.target.value })
+                }
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="crystal">
+                <strong>Crystal Coins</strong> <br />
+              </label>
+              <textarea
+                name="crystal"
+                placeholder="Crystal Coins"
+                className="form-control rounded-0"
+                value={values.crystal}
+                onChange={(e) =>
+                  setValues({ ...values, crystal: e.target.value })
+                }
+              />
+            </div>
+
+            <button className="home-button" type="submit" >
               Criar
             </button>
+            <Link to="/playerFront">
+                <button className="home-button">Voltar</button>
+              </Link>
           </form>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import './textsAreas.css'
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -46,18 +47,19 @@ const TextsAreas = ({ selectedId }) => {
   };
 
   return (
-    <div>
-      <h2>Editor de Dados do Usuário</h2>
+    <div className='text-area-main-container'>
+      
       {Object.keys(dataUser).map((key) => (
         editableFields.includes(key) && (
-          <div key={key}>
+          <div key={key} className='text-area-buttons'>
             <h3>{key}</h3>
-            <textarea
+            <textarea className='textareas-container'
+            rows="5" cols="40"
               name={key}
               value={updatedData[key] || dataUser[key]}
               onChange={handleInputChange}
             />
-            <button onClick={handleSaveClick}>Salvar</button>
+            <button className='text-area-save-button' onClick={handleSaveClick}>Salvar</button>
           </div>
         )
       ))}
