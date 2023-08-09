@@ -61,7 +61,7 @@ const CreateSheet = () => {
           gp: "",
           platinum: "",
           crystal: "",
-        });      
+        });
         setTimeout(() => {
           navigate("/playerFront");
         }, 2000);
@@ -78,7 +78,7 @@ const CreateSheet = () => {
       <div className="d-flex justify-content-center align items-center bg-primary vh-100">
         <div className="bg-white p-3 rounded w-25">
           <h2>Create Character</h2>
-          <form onSubmit={handleSubmit}>
+          <form className="form-container" onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="login">
                 <strong>Login</strong> <br />
@@ -303,9 +303,7 @@ const CreateSheet = () => {
                 placeholder="Gold Coins"
                 className="form-control rounded-0"
                 value={values.gp}
-                onChange={(e) =>
-                  setValues({ ...values, gp: e.target.value })
-                }
+                onChange={(e) => setValues({ ...values, gp: e.target.value })}
               />
             </div>
 
@@ -338,13 +336,14 @@ const CreateSheet = () => {
                 }
               />
             </div>
-
-            <button className="home-button" type="submit" >
-              Criar
-            </button>
-            <Link to="/playerFront">
+            <div>
+              <button className="home-button" type="submit">
+                Criar
+              </button>
+              <Link to="/playerFront">
                 <button className="home-button">Voltar</button>
               </Link>
+            </div>
           </form>
         </div>
       </div>

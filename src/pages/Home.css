@@ -42,7 +42,7 @@
     margin-top: 20px;
   }
   
-  @media screen and (min-width: 768px) {
+  @media (min-width: 768px) {
     .nav-buttons {
       flex-wrap: nowrap;
     }
@@ -52,5 +52,31 @@
       margin-right: 10px;
       margin-bottom: 0;
     }
+
+  }
+
+  @media (max-width: 800px){
+    .diplayed-sheet{
+      width: 95%;
+  }
   }
   
+  @media (max-width: 660px) {
+
+    .diplayed-sheet{
+        width: 80%;
+    }
+
+    .nav-buttons {
+      flex-wrap: nowrap;
+      gap: 10px;
+    }
+
+    .home-button {
+      width: auto;
+      margin-top: 10px;
+      margin-bottom: 0;
+      font-size: small;
+    }
+
+  }

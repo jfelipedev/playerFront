@@ -1,18 +1,31 @@
-.text-area-main-container{
+.text-area-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.text-area-save-button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+
+  font-size: small;
+  margin-left: 5px;
+}
+
+.textareas-container {
+  resize: vertical;
+  overflow-y: scroll;
+}
+
+@media (max-width: 660px) {
+  .textareas-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.text-area-save-button{
-    background: none;
-    border: 1px solid white;
-    color: white;
 
-    font-size: small;
-    margin-left: 5px;
-}
+  }
 
-.textareas-container{
-    resize: none;
-    overflow-y: scroll;
+  .text-area-save-button{
+    margin-top: 10px;
+  }
 }

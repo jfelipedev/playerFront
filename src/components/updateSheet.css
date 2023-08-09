@@ -1,0 +1,32 @@
+.update-sheet-intro-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input {
+    display:block;
+    width:200px;
+    margin:5px 0;
+    padding:5px;
+
+  }
+  textarea{
+    resize: vertical;
+    width: 200px;
+    margin:5px 0;
+    padding:5px;
+  }
+  .type-1 {
+    border-radius:10px;
+    border: 1px solid #eee;
+    transition: .3s border-color;
+  }
+  .type-1:hover {
+    border: 10px solid black;
+  }
+
+  .form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

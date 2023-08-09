@@ -91,7 +91,7 @@ const SelectPlayerSheet = () => {
 
         {selectedId && userData._id ? (
           <div className="attributes-main-container">
-            <div>
+            <div className="teste">
              <div className="your-character">
               <h2>{userData.nome}</h2>
               <img src={userData.imgURL} />

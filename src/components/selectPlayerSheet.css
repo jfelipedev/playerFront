@@ -1,4 +1,4 @@
-layer-sheet-main-container {
+.player-sheet-main-container {
   display: flex;
   flex-direction: column;
 }
@@ -31,7 +31,7 @@ layer-sheet-main-container {
   color: white;
   padding: 7px 0;
   background: transparent;
-  transition: border-color 0.2s;
+  transition: 0.2s;
 
   margin-bottom: 10px;
 }
@@ -91,3 +91,36 @@ layer-sheet-main-container {
     font-size: small;
 }
 
+
+@media (max-width: 660px) {
+
+  .attributes-main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .set-container{
+    align-items: center;
+  }
+
+  .teste{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .attributes{
+    align-items: center;
+  }
+
+  .character-money{
+    justify-content: center;
+}
+.life-mana-container{
+  display: flex;
+}
+}

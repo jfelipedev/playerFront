@@ -1,3 +1,4 @@
+import "./updateSheet.css";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -46,18 +47,22 @@ const UpdateSheet = () => {
 
   return (
     <div>
+      <div className="update-sheet-intro-container">
       <Link to="/playerFront">
-        <button>Meu Personagem</button>
+        <button className="home-button">Meu Personagem</button>
       </Link>
       <h2>Atualizar Dados do Usuário</h2>
       <label>
-        Insira o ID da Ficha:
-        <input type="text" value={userId} onChange={handleUserIdChange} />
-      </label>
-      <button onClick={handleSearchClick}>Buscar</button>
-
+        <p>Insira o ID da Ficha:</p>
+        <input className="form-input" type="text" value={userId} onChange={handleUserIdChange} />
+      </label>{" "}
+      <br />
+      <button className="home-button" onClick={handleSearchClick}>
+        Buscar
+      </button>
+      </div>
       {userData && (
-        <form onSubmit={handleFormSubmit}>
+        <form className="form-container" onSubmit={handleFormSubmit}>
           <h3>Atualizar Persoangem </h3>
           <p>
             Nome: <strong>{userData.nome}</strong>
@@ -140,38 +145,39 @@ const UpdateSheet = () => {
               value={updatedData.sabedoria || ""}
               onChange={handleInputChange}
             />
-          </label><br />
+          </label>
+          <br />
           <label>
             GP:
             <input
-              type="text"
+              type="number"
               name="gp"
               value={updatedData.gp || ""}
               onChange={handleInputChange}
             />
-          </label><br />
-
+          </label>
+          <br />
           <label>
             Platinum:
             <input
-              type="text"
+              type="number"
               name="platinum"
               value={updatedData.platinum || ""}
               onChange={handleInputChange}
             />
-          </label><br />
+          </label>
+          <br />
           <label>
             Crystal:
             <input
-              type="text"
+              type="number"
               name="crystal"
               value={updatedData.crystal || ""}
               onChange={handleInputChange}
             />
-          </label> 
-
+          </label>
           <br />
-          <br /> <br />
+
           <button type="submit">Atualizar Personagem</button>
           {updateSuccess && <p>Dados atualizados com sucesso!</p>}
         </form>
