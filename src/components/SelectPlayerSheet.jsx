@@ -1,11 +1,12 @@
-import "./selectPlayerSheet.css";
 import { useState, useEffect } from "react";
+import "./selectPlayerSheet.css";
 import axios from "axios";
 import EquipSet from "./EquipSet";
 import TextsAreas from "./TextsAreas";
-import gpImage from '../assets/gp.png'
-import platinumImage from '../assets/platinum.png'
-import crystalImage from '../assets/crystal.png'
+import gpImage from "../assets/gp.png";
+import platinumImage from "../assets/platinum.png";
+import crystalImage from "../assets/crystal.png";
+import Dice from "./Dice";
 
 const SelectPlayerSheet = () => {
   const [selectedId, setSelectedId] = useState("");
@@ -14,6 +15,12 @@ const SelectPlayerSheet = () => {
 
   const [life, setLife] = useState(0);
   const [mana, setMana] = useState(0);
+
+  const ataqueForca = userData.forca;
+  const ataqueDestreza = userData.destreza;
+  const defesa = userData.defesa;
+  const habilidade = userData.habilidade;
+  const sabedoria = userData.sabedoria;
 
   useEffect(() => {
     // Carregar o ID do usuário do Local Storage, se estiver disponível
@@ -64,6 +71,19 @@ const SelectPlayerSheet = () => {
     setMana((prevMana) => prevMana - 1);
   };
 
+  const handleDiceRoll = async (attribute, value) => {
+    try {
+      const response = await axios.put(
+        `https://sheets-api-psi.vercel.app/userData/${selectedId}`,
+        { [attribute]: value }
+      );
+      console.log("Dados atualizados:", response.data);
+      setUserData(response.data);
+    } catch (error) {
+      console.error("Erro ao atualizar dados:", error);
+    }
+  };
+
   // Salvar o ID do usuário no Local Storage sempre que for buscado um novo ID
   useEffect(() => {
     if (selectedId) {
@@ -92,64 +112,112 @@ const SelectPlayerSheet = () => {
         {selectedId && userData._id ? (
           <div className="attributes-main-container">
             <div className="teste">
-             <div className="your-character">
-              <h2>{userData.nome}</h2>
-              <img src={userData.imgURL} />
+              <div className="your-character">
+                <h2>{userData.nome}</h2>
+                <img src={userData.imgURL} />
               </div>
               <h2 className="section-separator"></h2>
-              <p style={{ textAlign: "center" }}> <strong> Aventureiro Classe: <span className="to-upper-case">{userData.classe}</span></strong></p>
+              <p style={{ textAlign: "center" }}>
+                {" "}
+                <strong>
+                  Aventureiro Classe:{" "}
+                  <span className="to-upper-case">{userData.classe}</span>
+                </strong>
+              </p>
               <h2 className="section-separator"></h2>
               <div className="life-mana-container">
-                <button className="increase-decrease-button" onClick={handleIncreaseLife}>+</button>
+                <button className="increase-decrease-button" onClick={handleIncreaseLife}>
+                  +
+                </button>
                 <strong>Life: {life}</strong>
-                <button className="increase-decrease-button"  onClick={handleDecreaseLife}>-</button>
+                <button className="increase-decrease-button" onClick={handleDecreaseLife}>
+                  -
+                </button>
                 <p></p>
-                <button className="increase-decrease-button"  onClick={handleIncreaseMana}>+</button>
+                <button className="increase-decrease-button" onClick={handleIncreaseMana}>
+                  +
+                </button>
                 <strong>Mana: {mana}</strong>
-                <button className="increase-decrease-button"  onClick={handleDecreaseMana}>-</button>
+                <button className="increase-decrease-button" onClick={handleDecreaseMana}>
+                  -
+                </button>
               </div>
-              {/* Mostrar outras informações aqui */}
               <h2 className="section-separator"></h2>
               <h2>Atributos</h2>
-              
+
               <ul className="attributes">
-                <li><strong>Força: </strong> {userData.forca}</li>
-                <li><strong>Destreza: </strong>{userData.destreza}</li>
-                <li><strong>Vitalidade: </strong>{userData.vitalidade}</li>
-                <li><strong>Inteligência: </strong>{userData.inteligencia}</li>
-                <li><strong>Defesa: </strong> {userData.defesa}</li>
+                <li>
+                  <strong>Força: </strong> {userData.forca}
+                </li>
+                <li>
+                  <strong>Destreza: </strong>
+                  {userData.destreza}
+                </li>
+                <li>
+                  <strong>Vitalidade: </strong>
+                  {userData.vitalidade}
+                </li>
+                <li>
+                  <strong>Inteligência: </strong>
+                  {userData.inteligencia}
+                </li>
+                <li>
+                  <strong>Defesa: </strong> {userData.defesa}
+                </li>
                 <br />
-                <li><strong>Habilidade:</strong>  {userData.habilidade}</li>
-                <li><strong> Sabedoria:</strong> {userData.sabedoria}</li>
+                <li>
+                  <strong>Habilidade:</strong> {userData.habilidade}
+                </li>
+                <li>
+                  <strong> Sabedoria:</strong> {userData.sabedoria}
+                </li>
               </ul>
-              <h2 className="section-separator"></h2>                
-              <div className="money-container">     
-              <h2>Economias</h2>
-              <ul className="character-money">
-              <li><img src={gpImage} alt="GP Image" />{userData.gp}</li>
-              <li><img src={platinumImage} alt="GP Image" />{userData.platinum}</li>
-              <li><img src={crystalImage} alt="GP Image" />{userData.crystal}</li>
-              </ul>              
+              <h2 className="section-separator"></h2>
+              <div className="money-container">
+                <h2>Economias</h2>
+                <ul className="character-money">
+                  <li>
+                    <img src={gpImage} alt="GP Image" />
+                    {userData.gp}
+                  </li>
+                  <li>
+                    <img src={platinumImage} alt="GP Image" />
+                    {userData.platinum}
+                  </li>
+                  <li>
+                    <img src={crystalImage} alt="GP Image" />
+                    {userData.crystal}
+                  </li>
+                </ul>
               </div>
               <h2 className="section-separator"></h2>
+              <h2>Testes</h2>
+              <div className="action-buttons-container">
+                <span>Ataque com Força</span>
+                <Dice adicional={ataqueForca} onRoll={(result) => handleDiceRoll("set", result)} />
+                <span>Ataque com Destreza</span>
+                <Dice adicional={ataqueDestreza} onRoll={(result) => handleDiceRoll("set", result)} />
+                <span>Teste de Defesa</span>
+                <Dice adicional={defesa} onRoll={(result) => handleDiceRoll("set", result)} />
+                <span>Teste de Habilidade</span>
+                <Dice adicional={habilidade} onRoll={(result) => handleDiceRoll("set", result)} />
+                <span>Teste de Sabedoria</span>
+                <Dice adicional={sabedoria} onRoll={(result) => handleDiceRoll("set", result)} />
+              </div>                 
             </div>
             <div>
-              
-            {selectedId && userData._id && (
-              
-              <div className="set-container">
-              
-                <h2>Seu Set</h2>
-                   
-                <div className="set-space">
-                  <EquipSet />
+              {selectedId && userData._id && (
+                <div className="set-container">
+                  <h2>Seu Set</h2>
+                  <div className="set-space">
+                    <EquipSet />
+                  </div>
                 </div>
+              )}
+              <div>
+                <h2 className="section-separator"></h2>
+                <TextsAreas selectedId={selectedId} />
               </div>
-            )}
-            <div>
-            <h2 className="section-separator"></h2>
-              <TextsAreas selectedId={selectedId} />
-            </div>
             </div>
           </div>
         ) : null}
