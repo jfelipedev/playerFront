@@ -39,11 +39,21 @@
 .set-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding-bottom: 20px;
+ }
+ .set-container h2 {
+margin: 10px;
+ }
 
-  height: 150px;
 
-  margin-top: 10px;
+
+.set-space{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 .attributes-main-container {
@@ -91,6 +101,14 @@
     font-size: small;
 }
 
+.to-upper-case{
+  text-transform: uppercase;
+}
+
+.section-separator{
+  border-bottom: 1px solid white;
+  width: 100%;
+}
 
 @media (max-width: 660px) {
 

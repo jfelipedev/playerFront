@@ -336,8 +336,8 @@ const CreateSheet = () => {
                 }
               />
             </div>
-            <div>
-              <button className="home-button" type="submit">
+            <div style={{ marginLeft: "10px" }}>
+              <button style={{ marginRight: "20px" }} className="home-button" type="submit">
                 Criar
               </button>
               <Link to="/playerFront">

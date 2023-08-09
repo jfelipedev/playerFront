@@ -96,7 +96,8 @@ const SelectPlayerSheet = () => {
               <h2>{userData.nome}</h2>
               <img src={userData.imgURL} />
               </div>
-              <p><strong>Aventureiro Classe: {userData.classe}</strong></p>
+              <h2 className="section-separator"></h2>
+              <p> <strong> Aventureiro Classe: <span className="to-upper-case">{userData.classe}</span></strong></p>
               <div className="life-mana-container">
                 <button className="increase-decrease-button" onClick={handleIncreaseLife}>+</button>
                 <strong>Life: {life}</strong>
@@ -107,7 +108,9 @@ const SelectPlayerSheet = () => {
                 <button className="increase-decrease-button"  onClick={handleDecreaseMana}>-</button>
               </div>
               {/* Mostrar outras informações aqui */}
+              <h2 className="section-separator"></h2>
               <h2>Atributos</h2>
+              
               <ul className="attributes">
                 <li><strong>Força: </strong> {userData.forca}</li>
                 <li><strong>Destreza: </strong>{userData.destreza}</li>
@@ -118,25 +121,32 @@ const SelectPlayerSheet = () => {
                 <li><strong>Habilidade:</strong>  {userData.habilidade}</li>
                 <li><strong> Sabedoria:</strong> {userData.sabedoria}</li>
               </ul>
-              <div className="money-container">                     
+              <h2 className="section-separator"></h2>                
+              <div className="money-container">     
               <h2>Economias</h2>
               <ul className="character-money">
               <li><img src={gpImage} alt="GP Image" />{userData.gp}</li>
               <li><img src={platinumImage} alt="GP Image" />{userData.platinum}</li>
               <li><img src={crystalImage} alt="GP Image" />{userData.crystal}</li>
-              </ul>
+              </ul>              
               </div>
+              <h2 className="section-separator"></h2>
             </div>
             <div>
+              
             {selectedId && userData._id && (
+              
               <div className="set-container">
-              <h2>Seu Set</h2>
-                <div>
+              
+                <h2>Seu Set</h2>
+                   
+                <div className="set-space">
                   <EquipSet />
                 </div>
               </div>
             )}
             <div>
+            <h2 className="section-separator"></h2>
               <TextsAreas selectedId={selectedId} />
             </div>
             </div>
