@@ -144,7 +144,7 @@ const UpdateSheet = () => {
           <label>
             GP:
             <input
-              type="number"
+              type="text"
               name="gp"
               value={updatedData.gp || ""}
               onChange={handleInputChange}
@@ -154,7 +154,7 @@ const UpdateSheet = () => {
           <label>
             Platinum:
             <input
-              type="number"
+              type="text"
               name="platinum"
               value={updatedData.platinum || ""}
               onChange={handleInputChange}
@@ -163,7 +163,7 @@ const UpdateSheet = () => {
           <label>
             Crystal:
             <input
-              type="number"
+              type="text"
               name="crystal"
               value={updatedData.crystal || ""}
               onChange={handleInputChange}
