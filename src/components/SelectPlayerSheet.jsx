@@ -38,8 +38,24 @@ const SelectPlayerSheet = () => {
           `https://sheets-api-psi.vercel.app/userData/${selectedId}`
         );
         setUserData(response.data);
-        setLife(response.data.vitalidade * 5);
-        setMana(response.data.inteligencia * 3);
+          
+          if(response.data.login === "Cavaleiro"){
+            setLife(response.data.vitalidade * 5);
+            setMana(response.data.inteligencia * 3);
+          } 
+          if(response.data.login === "Druida"){
+            setLife(response.data.vitalidade * 3);
+            setMana(response.data.inteligencia * 5);
+          } 
+          if(response.data.login === "Feiticeiro"){
+            setLife(response.data.vitalidade * 3);
+            setMana(response.data.inteligencia * 5);
+          }
+          if(response.data.login === "Arqueiro"){
+            setLife(response.data.vitalidade * 4);
+            setMana(response.data.inteligencia * 4);
+          }
+       
       } catch (error) {
         console.error("Erro ao buscar dados do usuário:", error);
         setUserData({});
@@ -129,6 +145,13 @@ const SelectPlayerSheet = () => {
                 <strong>
                   Level:{" "}
                   <span className="to-upper-case">{userData.level}</span>
+                </strong>
+              </p>
+              <p style={{ textAlign: "center" }}>
+                {" "}
+                <strong>
+                  {" "}
+                  <span>{userData.login}</span>
                 </strong>
               </p>
               <h2 className="section-separator"></h2>

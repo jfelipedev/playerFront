@@ -76,7 +76,16 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+          <label>
+            Vocação:
+            <input
+              type="text"
+              name="login"
+              value={updatedData.login || ""}
+              onChange={handleInputChange}
+            />
+          </label>
+      
           <label>
             Força:
             <input
@@ -86,7 +95,7 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+        
           <label>
             Destreza:
             <input
@@ -96,7 +105,7 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+         
           <label>
             Vitalidade:
             <input
@@ -106,7 +115,7 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+       
           <label>
             Inteligência:
             <input
@@ -116,7 +125,7 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+      
           <label>
             Defesa:
             <input
@@ -126,7 +135,7 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+         
           <label>
             Habilidade:
             <input
@@ -136,7 +145,7 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+         
           <label>
             Sabedoria:
             <input
@@ -146,7 +155,7 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+       
           <label>
             GP:
             <input
@@ -156,7 +165,7 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+         
           <label>
             Platinum:
             <input
@@ -166,7 +175,7 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
-          <br />
+          
           <label>
             Crystal:
             <input

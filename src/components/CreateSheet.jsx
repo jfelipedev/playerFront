@@ -81,12 +81,12 @@ const CreateSheet = () => {
           <form className="form-container" onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="login">
-                <strong>Login</strong> <br />
+                <strong>Vocação</strong> <br />
               </label>
               <input
                 type="text"
                 name="login"
-                placeholder="Login"
+                placeholder="Vocação"
                 className="form-control rounded-0"
                 value={values.login}
                 required
