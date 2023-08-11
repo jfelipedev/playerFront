@@ -30,6 +30,8 @@ const Register = () => {
 
   return (
     <div className="background">
+            <div className='rpg-title-container'>
+        <div className='rpg-title'> <h1>ECOS</h1></div>
       <div className="background-form">
         <h2>Sign Up</h2>
         <form className="form-login" onSubmit={handleSubmit}>
@@ -66,6 +68,7 @@ const Register = () => {
             Você já possui conta? <Link to="/playerFront/login">Clique Aqui</Link>
           </p>
         </form>
+      </div>
       </div>
     </div>
   );

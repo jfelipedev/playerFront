@@ -46,6 +46,8 @@ const Login = () => {
   return (
     
     <div className="background">
+      <div className='rpg-title-container'>
+        <div className='rpg-title'> <h1>ECOS</h1></div>
       <div className="background-form">
         <h2>Sign In</h2>
         <form className="form-login" onSubmit={handleSubmit}>
@@ -82,6 +84,7 @@ const Login = () => {
             Ainda não tem conta? <Link to="/playerFront/register">Clique Aqui</Link>
           </p>
         </form>
+      </div>
       </div>
     </div>
   );

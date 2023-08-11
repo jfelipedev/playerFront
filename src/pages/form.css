@@ -53,3 +53,20 @@
   background-repeat: no-repeat;
 }
 
+.rpg-title{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Kaushan Script', cursive;
+  text-shadow: 0 10px 10px rgba(0, 0, 0, 0.507);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #0000008f;
+}
+
+.rpg-title-container{
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+}
