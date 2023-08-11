@@ -51,10 +51,10 @@ const UpdateSheet = () => {
       <Link to="/playerFront">
         <button className="home-button">Meu Personagem</button>
       </Link>
-      <h2>Atualizar Dados do Usuário</h2>
-      <label>
+      <h2>Atualizar Dados do Jogador</h2>
+      <label className="find-sheet-label">
         <p>Insira o ID da Ficha:</p>
-        <input className="form-input" type="text" value={userId} onChange={handleUserIdChange} />
+        <input className="find-sheet-input" type="text" value={userId} onChange={handleUserIdChange} />
       </label>{" "}
       <br />
       <button className="home-button" onClick={handleSearchClick}>
@@ -62,7 +62,7 @@ const UpdateSheet = () => {
       </button>
       </div>
       {userData && (
-        <form className="form-container" onSubmit={handleFormSubmit}>
+        <form className="form-container-update" onSubmit={handleFormSubmit}>
           <h3>Atualizar Persoangem </h3>
           <p>
             Nome: <strong>{userData.nome}</strong>

@@ -31,8 +31,10 @@ body {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #27374D;
+  background-image: url("./assets/backgroundblur2.png");
   color: white;
+  background-size: cover; 
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -48,6 +50,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #394867;
+
   cursor: pointer;
   transition: border-color 0.25s;
  }

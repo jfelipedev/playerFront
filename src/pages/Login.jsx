@@ -44,7 +44,8 @@ const Login = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align items-center bg-primary vh-100">
+    
+    <div className="background">
       <div className="background-form">
         <h2>Sign In</h2>
         <form className="form-login" onSubmit={handleSubmit}>

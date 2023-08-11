@@ -3,13 +3,17 @@
   flex-direction: column;
   align-items: center;
   background: white;
-  padding: 70px;
+  justify-content: center;
+  /* padding: 70px; */
   color: #212a3e;
   border-radius: 10px;
   box-shadow: 1px 10px 20px 1px #000000;
+
+  width: 378px;
+  height: 450px;
 }
 .form-input {
-  font-family: inherit; 
+  font-family: inherit;
   width: 100%;
   border: 0;
   border-bottom: 2px solid gray;
@@ -21,7 +25,6 @@
 }
 .form-input:focus {
   font-size: 1rem;
-  
 }
 
 .form-login {
@@ -35,5 +38,18 @@
 
 .entrar-button:hover {
   background: #394867;
-  border-color: #9BA4B5;
+  border-color: #9ba4b5;
 }
+
+.background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("../assets/background2.png");
+  background-size: cover; 
+  background-repeat: no-repeat;
+}
+

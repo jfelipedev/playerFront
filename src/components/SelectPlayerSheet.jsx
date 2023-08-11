@@ -39,23 +39,120 @@ const SelectPlayerSheet = () => {
         );
         setUserData(response.data);
           
-          if(response.data.login === "Cavaleiro"){
+          if(response.data.login === "Cavaleiro" || response.data.login === "cavaleiro"){
             setLife(response.data.vitalidade * 5);
             setMana(response.data.inteligencia * 3);
+            if(response.data.classe === "e" || response.data.classe === "E" ){
+              setLife(response.data.vitalidade * 5 + 5);
+              setMana(response.data.inteligencia * 3 + 3);
+            } 
+            if(response.data.classe === "d" || response.data.classe === "D"){
+              setLife(response.data.vitalidade * 5 + 10);
+              setMana(response.data.inteligencia * 3 + 6);
+            } 
+            if(response.data.classe === "c" || response.data.classe === "C"){
+              setLife(response.data.vitalidade * 5 + 15);
+              setMana(response.data.inteligencia * 3 + 9);
+            } 
+            if(response.data.classe === "b" || response.data.classe === "B"){
+              setLife(response.data.vitalidade * 5 + 20);
+              setMana(response.data.inteligencia * 3 + 12);
+            } 
+            if(response.data.classe === "a" || response.data.classe === "A"){
+              setLife(response.data.vitalidade * 5 + 25);
+              setMana(response.data.inteligencia * 3 + 15);
+            } 
+            if(response.data.classe === "s" || response.data.classe === "S"){
+              setLife(response.data.vitalidade * 5 + 30);
+              setMana(response.data.inteligencia * 3 + 18);
+            } 
           } 
-          if(response.data.login === "Druida"){
+
+          if(response.data.login === "druida" || response.data.login === "Druida"){
             setLife(response.data.vitalidade * 3);
             setMana(response.data.inteligencia * 5);
+            if(response.data.classe === "e" || response.data.classe === "E" ){
+              setLife(response.data.vitalidade * 3 + 5);
+              setMana(response.data.inteligencia * 5 + 3);
+            } 
+            if(response.data.classe === "d" || response.data.classe === "D"){
+              setLife(response.data.vitalidade * 3 + 10);
+              setMana(response.data.inteligencia * 5 + 6);
+            } 
+            if(response.data.classe === "c" || response.data.classe === "C"){
+              setLife(response.data.vitalidade * 3 + 15);
+              setMana(response.data.inteligencia * 5 + 9);
+            } 
+            if(response.data.classe === "b" || response.data.classe === "B"){
+              setLife(response.data.vitalidade * 3 + 20);
+              setMana(response.data.inteligencia * 5 + 12);
+            } 
+            if(response.data.classe === "a" || response.data.classe === "A"){
+              setLife(response.data.vitalidade * 3 + 25);
+              setMana(response.data.inteligencia * 5 + 15);
+            } 
+            if(response.data.classe === "s" || response.data.classe === "S"){
+              setLife(response.data.vitalidade * 3 + 30);
+              setMana(response.data.inteligencia * 5 + 18);
+            } 
           } 
-          if(response.data.login === "Feiticeiro"){
+          if(response.data.login === "mago" || response.data.login === "Mago"){
             setLife(response.data.vitalidade * 3);
             setMana(response.data.inteligencia * 5);
-          }
-          if(response.data.login === "Arqueiro"){
+            if(response.data.classe === "e" || response.data.classe === "E" ){
+              setLife(response.data.vitalidade * 3 + 5);
+              setMana(response.data.inteligencia * 5 + 3);
+            } 
+            if(response.data.classe === "d" || response.data.classe === "D"){
+              setLife(response.data.vitalidade * 3 + 10);
+              setMana(response.data.inteligencia * 5 + 6);
+            } 
+            if(response.data.classe === "c" || response.data.classe === "C"){
+              setLife(response.data.vitalidade * 3 + 15);
+              setMana(response.data.inteligencia * 5 + 9);
+            } 
+            if(response.data.classe === "b" || response.data.classe === "B"){
+              setLife(response.data.vitalidade * 3 + 20);
+              setMana(response.data.inteligencia * 5 + 12);
+            } 
+            if(response.data.classe === "a" || response.data.classe === "A"){
+              setLife(response.data.vitalidade * 3 + 25);
+              setMana(response.data.inteligencia * 5 + 15);
+            } 
+            if(response.data.classe === "s" || response.data.classe === "S"){
+              setLife(response.data.vitalidade * 3 + 30);
+              setMana(response.data.inteligencia * 5 + 18);
+            } 
+          } 
+          if(response.data.login === "arqueiro" || response.data.login === "Arqueiro"){
             setLife(response.data.vitalidade * 4);
             setMana(response.data.inteligencia * 4);
-          }
-       
+            if(response.data.classe === "e" || response.data.classe === "E" ){
+              setLife(response.data.vitalidade * 4 + 5);
+              setMana(response.data.inteligencia * 4 + 3);
+            } 
+            if(response.data.classe === "d" || response.data.classe === "D"){
+              setLife(response.data.vitalidade * 4 + 10);
+              setMana(response.data.inteligencia * 4 + 6);
+            } 
+            if(response.data.classe === "c" || response.data.classe === "C"){
+              setLife(response.data.vitalidade * 4 + 15);
+              setMana(response.data.inteligencia * 4 + 9);
+            } 
+            if(response.data.classe === "b" || response.data.classe === "B"){
+              setLife(response.data.vitalidade * 4 + 20);
+              setMana(response.data.inteligencia * 4 + 12);
+            } 
+            if(response.data.classe === "a" || response.data.classe === "A"){
+              setLife(response.data.vitalidade * 4 + 25);
+              setMana(response.data.inteligencia * 4 + 15);
+            } 
+            if(response.data.classe === "s" || response.data.classe === "S"){
+              setLife(response.data.vitalidade * 4 + 30);
+              setMana(response.data.inteligencia * 4 + 18);
+            } 
+          } 
+
       } catch (error) {
         console.error("Erro ao buscar dados do usuário:", error);
         setUserData({});

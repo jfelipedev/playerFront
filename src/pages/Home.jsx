@@ -41,9 +41,10 @@ const Home = () => {
         </div>
       ) : (
         <div className="msg-button-login">
-          <h3>Faça login para acessar esta página.</h3>
+          <h1>Bem Vindo ao ECOS</h1>
+          <h2>Acesse sua conta para continuar <br />a sua aventura</h2>
           <Link to="/playerFront/login">
-            <button>login</button>
+            <button>Login</button>
           </Link>
         </div>
       )}
