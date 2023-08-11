@@ -69,3 +69,13 @@
   flex-direction: column;
   align-self: start;
 }
+
+
+@media (max-width: 660px){
+  .rpg-title{
+    font-size: 25px;
+  }
+  .background-form{
+    padding: 50px;
+  }
+}
