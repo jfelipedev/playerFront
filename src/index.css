@@ -33,8 +33,7 @@ body {
   align-items: center;
   background-image: url("./assets/backgroundblur2.png");
   color: white;
-  /* background-size: cover;  */
-  background-repeat: no-repeat;
+  background-size: cover; 
 }
 
 h1 {
