@@ -40,6 +40,11 @@
   .msg-button-login {
     text-align: center;
     margin-top: 20px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.726);
+   
+  }
+  .msg-button-login button{
+    box-shadow: 1px 5px 10px 1px #00000093;
   }
   
   @media (min-width: 768px) {
