@@ -85,6 +85,16 @@ const UpdateSheet = () => {
               onChange={handleInputChange}
             />
           </label>
+
+          <label>
+            Level:
+            <input
+              type="level"
+              name="level"
+              value={updatedData.level || ""}
+              onChange={handleInputChange}
+            />
+          </label>
       
           <label>
             Força:
